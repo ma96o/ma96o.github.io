@@ -18,14 +18,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: yarn
+          cache: npm
 
       - name: install
-        run: yarn
+        run: npm install
       - name: build
-        run: yarn run build
+        run: npm run build
       - name: preview
-        run: yarn run serve
+        run: npm run serve
       - name: add nojekyll
         run: touch ./out/.nojekyll
 
