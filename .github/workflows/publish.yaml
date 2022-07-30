@@ -22,15 +22,18 @@ jobs:
 
       - name: install
         run: npm install
+
       - name: build
         run: npm run build
-      - name: preview
-        run: npm run serve
-      - name: add nojekyll
-        run: touch ./out/.nojekyll
+
+      # - name: preview
+      #   run: npm run serve
+
+      # - name: add nojekyll
+      #   run: touch ./out/.nojekyll
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./dist
